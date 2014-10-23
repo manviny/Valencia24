@@ -37,6 +37,10 @@ angular
         templateUrl: 'views/portada.html',
         controller: 'PortadaCtrl'
       })
+      .when('/settings', {
+        templateUrl: 'views/settings.html',
+        controller: 'SettingsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
