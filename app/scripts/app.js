@@ -41,6 +41,10 @@ angular
         templateUrl: 'views/settings.html',
         controller: 'SettingsCtrl'
       })
+      .when('/share', {
+        templateUrl: 'views/share.html',
+        controller: 'ShareCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -1,0 +1,56 @@
+<style>
+.main-image {line-height: 90px;}
+.main-image-wrapper {height: 65px;}
+ </style>
+    <ons-page ng-controller="ShareCtrl">
+<br>
+
+	  <ons-row align="bottom">
+	    <ons-col>
+          <div class="grid-menu-item list__item--tappable" ng-click="share()">
+            <i class="fa fa-facebook"></i>
+            <div class="grid-menu-item-label">Facebook</div>
+          </div>
+	    </ons-col>
+	    <ons-col>
+          <div class="grid-menu-item list__item--tappable" ng-click="share()">
+            <i class="fa fa-twitter"></i>
+            <div class="grid-menu-item-label">twitter</div>
+          </div>
+	    </ons-col>
+	    <ons-col>
+          <div class="grid-menu-item list__item--tappable" ng-click="share()">
+            <i class="fa fa-phone"></i>
+            <div class="grid-menu-item-label">Whatsapp</div>
+          </div>
+	    </ons-col>
+	  </ons-row>
+
+	  <ons-row align="bottom">
+	    <ons-col>
+          <div class="grid-menu-item list__item--tappable" ng-click="share()">
+            <i class="fa fa-envelope"></i>
+            <div class="grid-menu-item-label">Msn</div>
+          </div>
+	    </ons-col>
+	    <ons-col>
+          <div class="grid-menu-item list__item--tappable" ng-click="share()">
+            <i class="fa fa-linkedin"></i>
+            <div class="grid-menu-item-label">Linkedin</div>
+          </div>
+	    </ons-col>
+	    <ons-col>
+          <div class="grid-menu-item list__item--tappable" ng-click="share()">
+            <i class="fa fa-send"></i>
+            <div class="grid-menu-item-label">Email</div>
+          </div>
+	    </ons-col>
+	  </ons-row>
+
+    <div class="main-image-wrapper">
+      <i class="fa fa-share-alt main-image"></i>
+    </div>
+	<br>
+    <button class="button login-button" ng-click="share()">compartir</button>
+
+    </ons-page>
