@@ -1,0 +1,61 @@
+
+<style>
+  .card {
+  background-color: white;
+  background-image: url(images/valencia-ocio.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 250px;
+}
+</style>      
+      <ons-page ng-controller="PortadaCtrl">
+ 
+          <div class="card">
+
+            <div class="card-name">Valencia</div>
+            <div class="card-desc">La Ciudad de la Luz<br>Abierto 24 horas</div>
+            
+          </div>        
+        <ons-row>
+          <!-- <ons-col width="10%"><ons-icon icon="fa-twitter"></ons-icon></ons-col> -->
+          <!-- <ons-col><img src="images/valencia-ocio.jpg" width="100%"></ons-col> -->
+          <!-- <ons-col width="10%"><ons-icon icon="fa-twitter"></ons-icon></ons-col> -->
+
+        </ons-row>
+
+      <ons-list>
+
+        <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="lit in lits">
+          <ons-row>
+            <ons-col width="95px">
+              <img src="{{lit.thp}}" class="thumbnail">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                {{lit.title}}
+              </div>
+              <div class="location">
+                <i class="fa fa-map-marker"></i> 3 km
+              </div>
+              <div class="desc">
+                {{lit.desc}}
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+      
+      </ons-list>
+
+
+
+      </ons-page>
+
+
+<!--         <ons-row style="margin-top: 100px;">
+          <ons-col align="center">
+            <ons-button modifier="light" ng-click="ons.navigator.pushPage('views/slide.html')">Push Page</ons-button>
+          </ons-col>
+        </ons-row>
+ -->  
