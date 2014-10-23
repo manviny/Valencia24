@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'onsen'
+    'onsen',
+    'manviny.mny-leaflet'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -27,6 +28,10 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
+      })
+      .when('/localiza', {
+        templateUrl: 'views/localiza.html',
+        controller: 'LocalizaCtrl'
       })
       .otherwise({
         redirectTo: '/'
