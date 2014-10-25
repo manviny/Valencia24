@@ -11,6 +11,13 @@ angular.module('valencia24App')
   .controller('PortadaCtrl', function ($scope) {
 
     console.debug("valencia",valencia);
+
+	// path to thumbs, audios.. 
+	// in appInfo.js  
+	// images/th_  || android filesystem// 
+    $scope.path = path;		
+
+
     $scope.lits = valencia.lits
 
   });
