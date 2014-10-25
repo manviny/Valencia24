@@ -20,4 +20,9 @@ angular.module('valencia24App')
 
     $scope.lits = valencia.lits
 
+
+  	$scope.goLit = function(index){
+  		myNavigator.pushPage('views/lit.html',{litIndex:index})
+  	}  
+
   });
