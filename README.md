@@ -43,6 +43,10 @@ $ bower install manviny/mny_leaflet --save
 $ # inject manviny.mny-leaflet to app.js
 ```
 
+## Use ngCordova
+(ngCordova)[http://ngcordova.com/docs/]
+
+
 ####  Depurar con weinre
 * poner esta linea de codigo en index.html    
 * < script src="http://192.168.1.20:8080/target/target-script-min.js#anonymous"></script >
