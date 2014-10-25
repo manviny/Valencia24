@@ -45,6 +45,10 @@ angular
         templateUrl: 'views/share.html',
         controller: 'ShareCtrl'
       })
+      .when('/lit', {
+        templateUrl: 'views/lit.html',
+        controller: 'LitCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
