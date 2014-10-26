@@ -8,7 +8,7 @@
  * Controller of the valencia24App
  */
 angular.module('valencia24App')
-  .controller('LitCtrl', function ($scope) {
+  .controller('LitCtrl', function ($scope, $cordovaMedia) {
    
     $scope.path = path;																// path to thumbs, audios.. 
 
@@ -19,8 +19,18 @@ angular.module('valencia24App')
     var mediaTimer = null;
 
     // carga el audio y play
-    // my_media = new Media( $scope.path.audios + $scope.lit.audio );
-    // my_media.play();  
+    console.debug("",$scope.path.audios + $scope.lit.audio);
+
+
+    var src =  $scope.path.audios + $scope.lit.audio;
+
+    var mediaSource = $cordovaMedia.newMedia(src);
+    var promise = mediaSource.promise;
+    var mediaStatus = mediaSource.mediaStatus;
+    var media = mediaSource.media;
+
+    $cordovaMedia.play(media);
+
 
 console.debug("audio", $scope.path.audios + $scope.lit.audio);
   });
