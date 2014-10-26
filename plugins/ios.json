@@ -4,7 +4,27 @@
         "uninstalled": []
     },
     "config_munge": {
-        "files": {}
+        "files": {
+            "framework": {
+                "parents": {
+                    "ImageIO.framework": [],
+                    "CoreLocation.framework": [],
+                    "CoreGraphics.framework": [],
+                    "AssetsLibrary.framework": [],
+                    "MobileCoreServices.framework": []
+                }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": []
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "NSLocationWhenInUseUsageDescription": []
+                }
+            }
+        }
     },
     "installed_plugins": {},
     "dependent_plugins": {}
