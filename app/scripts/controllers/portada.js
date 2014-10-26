@@ -8,16 +8,13 @@
  * Controller of the valencia24App
  */
 angular.module('valencia24App')
-  .controller('PortadaCtrl', function ($scope) {
+  .controller('PortadaCtrl', function ($scope, cordova) {
 
-    console.debug("valencia",valencia);
+	  cordova.ready.then(function () {
+	      alert('Cordova is ready');
+	  });
 
-	// path to thumbs, audios.. 
-	// in appInfo.js  
-	// images/th_  || android filesystem// 
-    $scope.path = path;		
-
-
+    $scope.path = path;							// path to thumbs, audios.. 
     $scope.lits = valencia.lits
 
 
