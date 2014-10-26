@@ -3,7 +3,7 @@
  * @type {Object}
  */
 var path = {
-	pictures: 'images/',
+	pictures: 'http://storage.googleapis.com/p24/vlc/es/',
 	audios: 'http://storage.googleapis.com/p24/vlc/es/'
 	// pictures: 'androidFileSystem//images/'	
 }
