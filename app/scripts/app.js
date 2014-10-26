@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'onsen',
-    'manviny.mny-leaflet'
+    'manviny.mny-leaflet',
+    'ngCordova'
   ])
   .config(function ($routeProvider) {
     $routeProvider
