@@ -13,7 +13,8 @@
     "angular-route": "1.2.16",
     "onsenui": "~1.1.4",
     "mny_leaflet": "manviny/mny_leaflet#~0.0.2",
-    "fontawesome": "~4.2.0"
+    "fontawesome": "~4.2.0",
+    "ngCordova": "~0.1.5-alpha"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",
