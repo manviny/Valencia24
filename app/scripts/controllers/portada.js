@@ -13,7 +13,6 @@ angular.module('valencia24App')
 	  cordova.ready.then(function () {
 
 	    alert('Cordova is ready');
-
 	        $cordovaGeolocation
 		    .getCurrentPosition()
 		    .then(function (position) {
@@ -21,14 +20,15 @@ angular.module('valencia24App')
 		      var long = position.coords.longitude
 		      alert(lat + '  ' + long);
 		    }, function(err) {
+		    	alert('error');
 		      // error
 		    });
-
 	  });
+
+
 
     $scope.path = path;							// path to thumbs, audios.. 
     $scope.lits = valencia.lits
-
 
   	$scope.goLit = function(index){
   		myNavigator.pushPage('views/lit.html',{litIndex:index})
