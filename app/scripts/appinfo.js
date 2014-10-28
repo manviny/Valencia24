@@ -3,8 +3,8 @@
  * @type {Object}
  */
 var path = {
-	pictures: 'http://storage.googleapis.com/p24/vlc/es/',
-	audios: 'http://storage.googleapis.com/p24/vlc/es/'
+	pictures: 'http://storage.googleapis.com/p24/vlc/img/',
+	audios: 'http://storage.googleapis.com/p24/vlc/es/'				//audios en castellano
 	// pictures: 'androidFileSystem//images/'	
 }
 var valencia;
