@@ -326,6 +326,13 @@ module.exports = function (grunt) {
                 cwd: 'bower_components/fontawesome/fonts/',
                 src: ['*.*'],
                 dest: '<%= yeoman.dist %>/fonts'
+            },
+        {
+                expand: true,
+                dot: true,
+                cwd: 'bower_components/ionicons/fonts/',
+                src: ['*.*'],
+                dest: '<%= yeoman.dist %>/fonts'
             }
         ]
       },
