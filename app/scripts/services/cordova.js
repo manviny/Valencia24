@@ -17,7 +17,6 @@ angular.module('valencia24App')
       this.ready = d.promise;
 
       document.addEventListener('deviceready', function () {
-          alert('deviceready fired');
           resolved = true;
           d.resolve($window.cordova);
       });

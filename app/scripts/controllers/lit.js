@@ -8,11 +8,12 @@
  * Controller of the valencia24App
  */
 angular.module('valencia24App')
-  .controller('LitCtrl', function ($scope, $cordovaMedia, cordova) {
+  .controller('LitCtrl', function ($scope, $cordovaMedia, cordova, p24) {
    
-    $scope.path = path;																                              // path to thumbs, audios.. 
-  	$scope.lit =  valencia.lits[myNavigator.getCurrentPage().options.litIndex];		  // datos del lit actual
-
+    $scope.path = p24.getPaths(); 															                              // path to thumbs, audios.. 
+    $scope.lit = p24.getLit(myNavigator.getCurrentPage().options.litIndex);
+  	// $scope.lit =  valencia.lits[myNavigator.getCurrentPage().options.litIndex];		  // datos del lit actual
+    // $scope.myPosition = 'hey '+ p24.myPosition;
 
     // Crea objecto de audio
     try {
@@ -20,8 +21,6 @@ angular.module('valencia24App')
         var promise = mediaSource.promise;
         var mediaStatus = mediaSource.mediaStatus;
         var media = mediaSource.media;
-        $cordovaMedia.play(media);
-      
         // $cordovaMedia.play(media); 
 
     } catch (exception) {
@@ -42,8 +41,8 @@ angular.module('valencia24App')
 
     //detecta una vez que hemos cambiado a otra pagina
     tabbar.on('prechange', function(event) {
-      $cordovaMedia.release(media);
       console.debug("event",event);
+      $cordovaMedia.release(media);
       // event.cancel();
     });
 
