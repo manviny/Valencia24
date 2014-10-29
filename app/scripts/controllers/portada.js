@@ -35,15 +35,21 @@ angular.module('valencia24App')
 
     $scope.path = p24.getPaths();										// path to thumbs, audios.. 
 	
-	p24.getLits()
-	.then(function(response){$scope.lits = response;});
+	// p24.getLits().then(function(response){ });							// carga los list
+
+	// $scope.lits = p24.getLits()
+
 	
 	p24.myPosition()
-	.then(function(response){ $scope.myPosition = response; })
+	.then(function(response){ 
+		$scope.myPosition = response;
+		$scope.lits = p24.getLitsCercanos(5);
+	})
 
 
-  	$scope.goLit = function(index){
-  		myNavigator.pushPage('views/lit.html',{litIndex:index, animation: "fade"})
+
+  	$scope.goLit = function(id){ 
+  		myNavigator.pushPage('views/lit.html',{litID:id, animation: "fade"})
   	}  
 
   });

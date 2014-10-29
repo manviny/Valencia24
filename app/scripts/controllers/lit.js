@@ -11,7 +11,7 @@ angular.module('valencia24App')
   .controller('LitCtrl', function ($scope, $cordovaMedia, cordova, p24) {
    
     $scope.path = p24.getPaths(); 															                              // path to thumbs, audios.. 
-    $scope.lit = p24.getLit(myNavigator.getCurrentPage().options.litIndex);
+    $scope.lit = p24.getLit(myNavigator.getCurrentPage().options.litID);
   	// $scope.lit =  valencia.lits[myNavigator.getCurrentPage().options.litIndex];		  // datos del lit actual
     // $scope.myPosition = 'hey '+ p24.myPosition;
 

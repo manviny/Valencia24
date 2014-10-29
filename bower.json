@@ -15,7 +15,8 @@
     "mny_leaflet": "manviny/mny_leaflet#~0.0.2",
     "fontawesome": "~4.2.0",
     "ngCordova": "~0.1.5-alpha",
-    "ionicons": "~1.5.2"
+    "ionicons": "~1.5.2",
+    "lodash": "~2.4.1"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",

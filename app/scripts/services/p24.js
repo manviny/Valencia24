@@ -10,11 +10,11 @@
 angular.module('valencia24App')
   .factory('p24', function (cordova, $q, $cordovaGeolocation) {
 
+
     /**
      * paths to audios and images it can point to /images or the phone filessytem or a web
      * @type {Object}
      */
-
     var municipio = {
           lits: {},   
           telefonos: { policia: '', bomberos: ''},
@@ -26,6 +26,18 @@ angular.module('valencia24App')
           }
     }; 
 
+    // Posicion del susario
+    var userPosition;             
+
+    // Carga al entrar en la app los lits
+    if(_.isUndefined(municipio.lits.length)) {alert("hh")
+       dpd.lits.get(function (result, err) {
+        if(err) return console.log(err);
+        municipio.lits = result;
+        console.debug("LITS", municipio.lits);
+      });   
+    }
+
 
     /**
      * Carga los list desde el servidor
@@ -33,14 +45,15 @@ angular.module('valencia24App')
      * @param  {[type]} err    [description]
      * @return {[type]}        [description]
      */
-    var  getLits = function() { 
-      var deferred = $q.defer();
-      dpd.lits.get(function (result, err) {
-        if(err) return console.log(err);
-        municipio.lits = result;
-        deferred.resolve(municipio.lits);
-      });
-      return deferred.promise;
+    var getLits = function() { 
+      return municipio.lits; 
+      // var deferred = $q.defer();
+      // dpd.lits.get(function (result, err) {
+      //   if(err) return console.log(err);
+      //   municipio.lits = result;
+      //   deferred.resolve(municipio.lits);
+      // });
+      // return deferred.promise;
    }
 
    /**
@@ -48,7 +61,9 @@ angular.module('valencia24App')
     * @param  {[type]} index [description]
     * @return {[type]}       [description]
     */
-    var  getLit = function(index) { return municipio.lits[index]; }
+    var  getLit = function(id) { 
+      return _.find(municipio.lits, function(lit) {return lit.id == id;}); 
+    }
 
     /**
      * path to assets in server
@@ -65,13 +80,28 @@ angular.module('valencia24App')
       var deferred = $q.defer();
         $cordovaGeolocation.getCurrentPosition()
         .then(function (position) {
-            deferred.resolve(position.coords);
+            userPosition = position.coords;
+            deferred.resolve(userPosition);
             }, function(err) {alert(err);}
         ); 
         return deferred.promise;
     }
 
+    var  getLitsCercanos = function(numeroLits) {
+          var distancia;
+          var puntoMasProximo = 
+          _.map(
+            _.sortBy(municipio.lits, 
+              function(items){
+                  // ordena las items por distancia al usuario 
+                  distancia = Math.abs(items.coords.lat-(userPosition.latitude)) +  Math.abs(items.coords.lng-(userPosition.longitude));
+                  items.dist = distancia;
+                  return distancia ;
+            })
+          )
+          return _.first(puntoMasProximo,numeroLits);
 
+    }
 
 
     // C.- PUBLIC METHODS
@@ -79,7 +109,8 @@ angular.module('valencia24App')
       myPosition: myPosition,
       getPaths: getPaths,
       getLits: getLits,    
-      getLit: getLit    
+      getLit: getLit,
+      getLitsCercanos: getLitsCercanos    
     }; 
 
 
