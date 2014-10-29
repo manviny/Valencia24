@@ -5,7 +5,26 @@
       <div class="center">{{lit.title}}</div>
     </ons-toolbar>
 
-    <ons-row>
+        <div class="navigation-bar">
+          <div class="navigation-bar__center">
+
+            <!-- segment control -->
+            <div class="button-bar" style="width:200px; margin:8px auto 0;">
+              <div class="button-bar__item" ng-click="muestraMapa = !muestraMapa">
+                <input type="radio" name="navi-segment-a" checked>
+                <div class="button-bar__button">imagen</div>
+              </div>
+              <div class="button-bar__item"  ng-click="muestraMapa = !muestraMapa">
+                <input type="radio" name="navi-segment-a">
+                <div class="button-bar__button">mapa</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+    <ons-row ng-hide="muestraMapa">
         <ons-col>
           <div class='topcoat-progress-bar'>
             <span class='topcoat-progress' style='width:{{getCurrentPosition}}%'></span>
@@ -13,29 +32,28 @@
         </ons-col>
     </ons-row>  
 
-    <ons-row style="margin-top:-28px; margin-bottom:10px">
+    <ons-row style="margin-top:-28px; margin-bottom:10px"  ng-hide="muestraMapa">
         <ons-col align="center">
           <ons-button modifier="outline" ng-click="play()"><ons-icon icon="ion-ios7-rewind-outline" size="30px"></ons-icon></ons-button>
           <ons-button modifier="outline" ng-click="play()"><ons-icon icon="ion-ios7-play-outline" size="30px"></ons-icon></ons-button>  
           <ons-button modifier="outline" ng-click="pause()"><ons-icon icon="ion-ios7-pause-outline" size="30px"></ons-icon></ons-button>
         </ons-col>
     </ons-row>       
-
-  <ons-row>
+  <ons-row ng-hide="muestraMapa">
     <ons-col >
       <img src="{{path.pictures}}{{lit.media}}.jpg" width="100%">   
     </ons-col>  
   </ons-row>
 
-  <ons-row>
-    <ons-col >
-      <p>{{path.audios}}{{lit.media}}.mp3</p> 
-    </ons-col>  
+  <ons-row ng-show="muestraMapa">
+    <ons-col ng-controller="LocalizaCtrl">
+      
+          <leaflet center="centerHere" height="450px" markers="myMarkers"  layers="layers" defaults="defaults"  ></leaflet>
+      </div>
+    
   </ons-row>
-	<ons-row>
-		<ons-col >
-			<p>{{myPosition}}</p>	
-		</ons-col>	
-	</ons-row>
+
+
+
 
 </ons-page>

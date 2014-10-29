@@ -30,11 +30,10 @@ angular.module('valencia24App')
     var userPosition;             
 
     // Carga al entrar en la app los lits
-    if(_.isUndefined(municipio.lits.length)) {alert("hh")
+    if(_.isUndefined(municipio.lits.length)) {
        dpd.lits.get(function (result, err) {
         if(err) return console.log(err);
         municipio.lits = result;
-        console.debug("LITS", municipio.lits);
       });   
     }
 
@@ -70,6 +69,7 @@ angular.module('valencia24App')
      * @return {[type]} [description]
      */
     var  getPaths = function() {return municipio.paths;}
+    var  getuserPosition = function() {return userPosition;}
 
 
     /**
@@ -99,18 +99,19 @@ angular.module('valencia24App')
                   return distancia ;
             })
           )
-          return _.first(puntoMasProximo,numeroLits);
+          return _.first(puntoMasProximo, numeroLits);
 
     }
 
 
     // C.- PUBLIC METHODS
     return {
-      myPosition: myPosition,
+      myPosition: myPosition,                         // promise of user position
       getPaths: getPaths,
       getLits: getLits,    
       getLit: getLit,
-      getLitsCercanos: getLitsCercanos    
+      getLitsCercanos: getLitsCercanos,
+      getuserPosition: getuserPosition                // returns variable of user position
     }; 
 
 

@@ -8,13 +8,34 @@
  * Controller of the valencia24App
  */
 angular.module('valencia24App')
-  .controller('LitCtrl', function ($scope, $cordovaMedia, cordova, p24) {
-   
+  .controller('LitCtrl', function ($scope, $cordovaMedia, cordova, p24, mnymapa) {
+
+
+    
     $scope.path = p24.getPaths(); 															                              // path to thumbs, audios.. 
     $scope.lit = p24.getLit(myNavigator.getCurrentPage().options.litID);
   	// $scope.lit =  valencia.lits[myNavigator.getCurrentPage().options.litIndex];		  // datos del lit actual
     // $scope.myPosition = 'hey '+ p24.myPosition;
 
+
+    /**
+     * MAPA
+     * @type {Array}
+     */
+    $scope.muestraMapa = false;
+
+    mnymapa.setDefaultMap();
+    var array = [];
+    array.push($scope.lit.coords);    
+    array.push(p24.getuserPosition());    
+
+    mnymapa.pushMarkers(array); 
+
+
+
+    /**
+     * AUDIO
+     */
     // Crea objecto de audio
     try {
         var mediaSource = $cordovaMedia.newMedia($scope.path.audios + $scope.lit.media + '.mp3');
