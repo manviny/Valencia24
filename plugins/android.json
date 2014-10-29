@@ -9,15 +9,15 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"SpinnerDialog\"><param name=\"android-package\" value=\"hu.dpal.phonegap.plugins.SpinnerDialog\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"SpinnerDialog\"><param name=\"android-package\" value=\"hu.dpal.phonegap.plugins.SpinnerDialog\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -56,6 +56,9 @@
         }
     },
     "installed_plugins": {
+        "hu.dpal.phonegap.plugins.SpinnerDialog": {
+            "PACKAGE_NAME": "com.patrimonio24.valencia24"
+        },
         "org.apache.cordova.file": {
             "PACKAGE_NAME": "com.patrimonio24.valencia24"
         },
@@ -63,9 +66,6 @@
             "PACKAGE_NAME": "com.patrimonio24.valencia24"
         },
         "org.apache.cordova.media": {
-            "PACKAGE_NAME": "com.patrimonio24.valencia24"
-        },
-        "hu.dpal.phonegap.plugins.SpinnerDialog": {
             "PACKAGE_NAME": "com.patrimonio24.valencia24"
         }
     },
