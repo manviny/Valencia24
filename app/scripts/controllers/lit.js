@@ -22,15 +22,21 @@ angular.module('valencia24App')
      * MAPA
      * @type {Array}
      */
-    $scope.muestraMapa = false;
+    $scope.muestraMapa = true;
 
+
+    // initialize map
     mnymapa.setDefaultMap();
+
     var array = [];
-    array.push($scope.lit.coords);    
-    array.push(p24.getuserPosition());    
+ 
+    array.push({lat: p24.getuserPosition().latitude, lng: p24.getuserPosition().longitude ,zoom: 17});   
+    array.push($scope.lit.coords);   
 
     mnymapa.pushMarkers(array); 
 
+    mnymapa.fitMarkers(array); // not reloading map
+     
 
 
     /**
@@ -57,13 +63,14 @@ angular.module('valencia24App')
     //detecta una vez que hemos vuelto a la pagina que llama
     myNavigator.once("postpop", function(event){
       console.debug("event",event);
-      $cordovaMedia.release(media);
+          try { $cordovaMedia.release(media);} catch (exception) {}
+      
     });
 
     //detecta una vez que hemos cambiado a otra pagina
     tabbar.on('prechange', function(event) {
       console.debug("event",event);
-      $cordovaMedia.release(media);
+      try { $cordovaMedia.release(media);} catch (exception) {}
       // event.cancel();
     });
 

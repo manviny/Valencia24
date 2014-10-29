@@ -1,94 +1,51 @@
  <ons-page ng-controller="SettingsCtrl">
  
- <ons-toolbar>
-        <div class="center">
-          
-        </div>
-      </ons-toolbar>
+  <ons-toolbar>
+    <div class="center">Ajustes</div>
+  </ons-toolbar>
 
-      <ons-list class="range-list">
-        <ons-list-item>
-          <ons-row>
-            <ons-col width="40px">
-              <ons-icon icon="fa-volume-down" class="lower"></ons-icon>
-            </ons-col>
-            <ons-col class="range-wrapper">
-              <input type="range" value="10" class="range">
-            </ons-col>
-            <ons-col width="40px">
-              <ons-icon icon="fa-volume-up"></ons-icon>
-            </ons-col>
-          </ons-row>
-        </ons-list-item>
 
-        <ons-list-item>
-          <ons-row>
-            <ons-col width="40px">
-              <ons-icon icon="fa-umbrella" class="lower"></ons-icon>
-            </ons-col>
-            <ons-col class="range-wrapper">
-              <input type="range" value="30" class="range">
-            </ons-col>
-            <ons-col width="40px">
-              <ons-icon icon="fa-umbrella"></ons-icon>
-            </ons-col>
-          </ons-row>
-        </ons-list-item>
+  <ons-list modifier="inset" class="settings-list">
 
-        <ons-list-item>
-          <ons-row>
-            <ons-col width="40px">
-              <ons-icon icon="fa-sun-o" class="lower"></ons-icon>
-            </ons-col>
-            <ons-col class="range-wrapper">
-              <input type="range" value="50" class="range">
-            </ons-col>
-            <ons-col width="40px">
-              <ons-icon icon="fa-sun-o"></ons-icon>
-            </ons-col>
-          </ons-row>
-        </ons-list-item>
+    <ons-list-item>Audio<ons-switch modifier="list-item"></ons-switch></ons-list-item>
 
-        <ons-list-item>
-          <ons-row>
-            <ons-col width="40px">
-              <ons-icon icon="fa-bolt" class="lower"></ons-icon>
-            </ons-col>
-            <ons-col class="range-wrapper">
-              <input type="range" value="70" class="range">
-            </ons-col>
-            <ons-col width="40px">
-              <ons-icon icon="fa-bolt"></ons-icon>
-            </ons-col>
-          </ons-row>
-        </ons-list-item>
+    <ons-list-item>Automático<ons-switch modifier="list-item" checked></ons-switch></ons-list-item>
 
-        <ons-list-item>
-          <ons-row>
-            <ons-col width="40px">
-              <ons-icon icon="fa-moon-o" class="lower"></ons-icon>
-            </ons-col>
-            <ons-col class="range-wrapper">
-              <input type="range" value="90" class="range">
-            </ons-col>
-            <ons-col width="40px">
-              <ons-icon icon="fa-moon-o"></ons-icon>
-            </ons-col>
-          </ons-row>
-        </ons-list-item>
-      </ons-list>
+    <ons-list-item>GPS<ons-switch modifier="list-item" checked></ons-switch></ons-list-item>
 
-      <ons-list modifier="inset" class="settings-list">
-        <ons-list-item>
-          Audio
-          <ons-switch modifier="list-item"></ons-switch>
-        </ons-list-item>
+  </ons-list>
 
-        <ons-list-item>
-          Automático
-          <ons-switch modifier="list-item" checked></ons-switch>
-        </ons-list-item>
-      </ons-list>
+
+  <ons-list class="range-list">
+    <ons-list-item>
+      <ons-row>
+        <ons-col width="40px">
+          <ons-icon icon="fa-volume-down" class="lower"></ons-icon>
+        </ons-col>
+        <ons-col class="range-wrapper">
+          <input type="range" value="10" class="range">
+        </ons-col>
+        <ons-col width="40px">
+          <ons-icon icon="fa-volume-up"></ons-icon>
+        </ons-col>
+      </ons-row>
+    </ons-list-item>
+
+
+    <ons-list-item>
+      <ons-row>
+        <ons-col width="40px">
+          <ons-icon icon="fa-sun-o" class="lower"></ons-icon>
+        </ons-col>
+        <ons-col class="range-wrapper">
+          <input type="range" value="50" class="range">
+        </ons-col>
+        <ons-col width="40px">
+          <ons-icon icon="fa-sun-o"></ons-icon>
+        </ons-col>
+      </ons-row>
+    </ons-list-item>
+
 
  </ons-page>
 
