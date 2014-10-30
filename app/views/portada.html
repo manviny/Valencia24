@@ -28,19 +28,11 @@
           </div>
         </div>
 
-        <ons-row>
-          <!-- <ons-col width="10%"><ons-icon icon="fa-twitter"></ons-icon></ons-col> -->
-          <!-- <ons-col><img src="images/valencia-ocio.jpg" width="100%"></ons-col> -->
-          <!-- <ons-col width="10%"><ons-icon icon="fa-twitter"></ons-icon></ons-col> -->
-
-        </ons-row>
 
 
-  <div class="center" ng-show="muestraMapa">
-
-        <leaflet center="centerHere" height="450px" markers="myMarkers"  layers="layers" defaults="defaults"  ></leaflet>
-
-  </div>
+      <div class="center" ng-show="muestraMapa">
+            <leaflet center="centerHere" height="{{popupHeight}}" markers="myMarkers"  layers="layers" defaults="defaults"  ></leaflet>
+      </div>
 
       <ons-list ng-hide="muestraMapa">
 

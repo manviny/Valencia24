@@ -15,6 +15,7 @@ angular.module('valencia24App')
     $scope.path = p24.getPaths();										// path to thumbs, audios.. 
 	
     $scope.muestraMapa = true;
+    $scope.popupHeight = window.innerHeight - 132;
 
     // initialize map
     mnymapa.setDefaultMap();
