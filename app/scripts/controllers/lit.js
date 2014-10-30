@@ -14,29 +14,6 @@ angular.module('valencia24App')
     
     $scope.path = p24.getPaths(); 															                              // path to thumbs, audios.. 
     $scope.lit = p24.getLit(myNavigator.getCurrentPage().options.litID);
-  	// $scope.lit =  valencia.lits[myNavigator.getCurrentPage().options.litIndex];		  // datos del lit actual
-    // $scope.myPosition = 'hey '+ p24.myPosition;
-
-
-    /**
-     * MAPA
-     * @type {Array}
-     */
-    $scope.muestraMapa = true;
-
-
-    // initialize map
-    mnymapa.setDefaultMap();
-
-    var array = [];
- 
-    array.push({lat: p24.getuserPosition().latitude, lng: p24.getuserPosition().longitude ,zoom: 17});   
-    array.push($scope.lit.coords);   
-
-    mnymapa.pushMarkers(array); 
-
-    mnymapa.fitMarkers(array); // not reloading map
-     
 
 
     /**

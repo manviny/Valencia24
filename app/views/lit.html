@@ -5,24 +5,6 @@
       <div class="center">{{lit.title}}</div>
     </ons-toolbar>
 
-        <div class="navigation-bar">
-          <div class="navigation-bar__center">
-
-            <!-- segment control -->
-            <div class="button-bar" style="width:200px; margin:8px auto 0;">
-              <div class="button-bar__item" ng-click="muestraMapa = !muestraMapa">
-                <input type="radio" name="navi-segment-a" checked>
-                <div class="button-bar__button">mapa</div>
-              </div>
-              <div class="button-bar__item"  ng-click="muestraMapa = !muestraMapa">
-                <input type="radio" name="navi-segment-a">
-                <div class="button-bar__button">imagen</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
 
         <ons-row>
             <ons-col>
@@ -41,18 +23,11 @@
         </ons-row>       
 
       <ons-row>
-        <ons-col ng-hide="muestraMapa">
+        <ons-col>
           <img src="{{path.pictures}}{{lit.media}}.jpg" width="100%">   
         </ons-col>  
       </ons-row>
   
-
-  <div class="center" ng-show="muestraMapa">
-
-        <leaflet center="centerHere" height="450px" markers="myMarkers"  layers="layers" defaults="defaults"  ></leaflet>
-
-  </div>
-
 
 
 </ons-page>
