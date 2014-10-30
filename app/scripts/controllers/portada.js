@@ -8,48 +8,55 @@
  * Controller of the valencia24App
  */
 angular.module('valencia24App')
-  .controller('PortadaCtrl', function ($scope, p24, cordova, $cordovaGeolocation, $cordovaSpinnerDialog) {
-
-
-        // Cordova event handler
-        // $cordovaSpinnerDialog.show("Cargando cordova","");
-
-	 
-  	// mi posicion GPS
-	  // cordova.ready.then(function () {
-	  // 	 $cordovaSpinnerDialog.show("Buscando posición","...");
-	  //       $cordovaGeolocation
-		 //    .getCurrentPosition()
-		 //    .then(function (position) {
-		 //      var lat  = position.coords.latitude;
-		 //      var long = position.coords.longitude;
-		 //      $cordovaSpinnerDialog.hide();
-		 //      alert(lat + '  ' + long);
-		 //    }, function(err) {
-		 //    	alert(err);
-		 //      // error
-		 //    });
-	  // });
+  .controller('PortadaCtrl', function ($scope, p24, cordova, $cordovaGeolocation, $cordovaSpinnerDialog, mnymapa) {
 
 
 
     $scope.path = p24.getPaths();										// path to thumbs, audios.. 
 	
-	// p24.getLits().then(function(response){ });							// carga los list
+    $scope.muestraMapa = true;
 
-	// $scope.lits = p24.getLits()
+    // initialize map
+    mnymapa.setDefaultMap();
+    var array = [];
 
-	
+
+	/**
+	 * get user position and near lits
+	 */
 	p24.myPosition()
 	.then(function(response){ 
 		$scope.myPosition = response;
+    	array.push({lat: $scope.myPosition.latitude, lng: $scope.myPosition.longitude ,zoom: 17});  		
 		$scope.lits = p24.getLitsCercanos(5);
-	})
 
+		
+		angular.forEach($scope.lits, function(lit, key) {
+		  	console.debug(key, lit);
+		    array.push(lit.coords); 		  
+		});
+		    mnymapa.pushMarkers(array); 
+		    mnymapa.fitMarkers(array); // not reloading map
+
+	})
 
 
   	$scope.goLit = function(id){ 
   		myNavigator.pushPage('views/lit.html',{litID:id, animation: "fade"})
   	}  
+
+
+
+
+
+ 
+ 
+  
+
+
+
+
+	
+
 
   });

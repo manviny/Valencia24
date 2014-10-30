@@ -3,7 +3,30 @@
  
     <ons-toolbar>
       <div class="center">Lugares cercanos</div>
+              <div class="left">
+          <ons-toolbar-button>
+            <ons-icon icon="ion-ios7-navigate-outline" modifier="should-spin" style="font-size: 32px; width: 1em">
+          </ons-toolbar-button>
+        </div>
     </ons-toolbar>
+
+        <div class="navigation-bar">
+          <div class="navigation-bar__center">
+
+            <!-- segment control -->
+            <div class="button-bar" style="width:200px; margin:8px auto 0;">
+              <div class="button-bar__item" ng-click="muestraMapa = !muestraMapa">
+                <input type="radio" name="navi-segment-a" checked>
+                <div class="button-bar__button">mapa</div>
+              </div>
+              <div class="button-bar__item"  ng-click="muestraMapa = !muestraMapa">
+                <input type="radio" name="navi-segment-a">
+                <div class="button-bar__button">lista</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
 
         <ons-row>
           <!-- <ons-col width="10%"><ons-icon icon="fa-twitter"></ons-icon></ons-col> -->
@@ -12,7 +35,14 @@
 
         </ons-row>
 
-      <ons-list>
+
+  <div class="center" ng-show="muestraMapa">
+
+        <leaflet center="centerHere" height="450px" markers="myMarkers"  layers="layers" defaults="defaults"  ></leaflet>
+
+  </div>
+
+      <ons-list ng-hide="muestraMapa">
 
         <ons-list-item modifier="chevron" class="list-item-container" ng-click="goLit(lit.id)" ng-repeat="lit in lits">
           <ons-row>
