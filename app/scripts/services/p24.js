@@ -34,6 +34,7 @@ angular.module('valencia24App')
        dpd.lits.get(function (result, err) {
         if(err) return console.log(err);
         municipio.lits = result;
+        console.debug("LITS", municipio.lits);
       });   
     }
 
