@@ -27,13 +27,19 @@ angular.module('valencia24App')
 	p24.myPosition()
 	.then(function(response){ 
 		$scope.myPosition = response;
-    	array.push({lat: $scope.myPosition.latitude, lng: $scope.myPosition.longitude ,zoom: 17});  		
+    	array.push({lat: $scope.myPosition.latitude, lng: $scope.myPosition.longitude ,
+    				icon: L.icon({
+		 			iconUrl: '/images/yo.png',
+		 			iconSize: [45, 45],
+		 			popupAnchor: [0, -25],	            			 
+				})
+    	});  		
 		$scope.lits = p24.getLitsCercanos(5);
 
 		
 		angular.forEach($scope.lits, function(lit, key) {
 		  	console.debug(key, lit);
-		    array.push(lit.coords); 		  
+		    array.push( {lat: lit.coords.lat , lng: lit.coords.lng, message: '<h4>'+lit.title+'</h4>'  } ); 		  
 		});
 		    mnymapa.pushMarkers(array); 
 		    mnymapa.fitMarkers(array); // not reloading map
