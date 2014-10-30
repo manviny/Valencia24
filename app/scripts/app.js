@@ -50,6 +50,10 @@ angular
         templateUrl: 'views/lit.html',
         controller: 'LitCtrl'
       })
+      .when('/splash', {
+        templateUrl: 'views/splash.html',
+        controller: 'SplashCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
