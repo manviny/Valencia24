@@ -7,8 +7,6 @@
 
   <ons-list modifier="inset" class="settings-list">
 
-    <ons-list-item>Audio<ons-switch modifier="list-item"></ons-switch></ons-list-item>
-
     <ons-list-item>Automático<ons-switch modifier="list-item" checked></ons-switch></ons-list-item>
 
     <ons-list-item>GPS<ons-switch modifier="list-item" checked></ons-switch></ons-list-item>
@@ -49,13 +47,13 @@
     <ons-list-item>
       <ons-row>
         <ons-col width="40px">
-          <ons-icon icon="fa-sun-o" class="lower"></ons-icon>
+          <ons-icon icon="ion-android-hand" class="lower"></ons-icon>
         </ons-col>
         <ons-col class="range-wrapper">
-          <input type="range" value="50" class="range">
+          <input type="range" value="50" ng-model="saltaAudio" class="range">
         </ons-col>
-        <ons-col width="40px">
-          <ons-icon icon="fa-sun-o"></ons-icon>
+        <ons-col width="70px">
+          <span> &nbsp{{saltaAudio}} m.</span>
         </ons-col>
       </ons-row>
     </ons-list-item>

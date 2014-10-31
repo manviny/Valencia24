@@ -9,9 +9,5 @@
  */
 angular.module('valencia24App')
   .controller('SettingsCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.saltaAudio = 50;
   });
